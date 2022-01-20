@@ -20,11 +20,11 @@ namespace BlazorAssemblyTravel.Api.Data.DataObjects
         
         public string? Description { get; set; }
         
-        public int SearchId { get; set; }
+        public string? SearchId { get; set; }
         
-        public int SortOrder { get; set; }
+        public int? SortOrder { get; set; }
         
-        public int ParentRegionId { get; set; }
+        public int? ParentRegionId { get; set; }
         
         public string? ListingName { get; set; }
     }

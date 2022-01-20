@@ -40,4 +40,45 @@ public class CruiseService : ICruiseService
 
         return cruiseDeals;
     }
+    
+    public async Task<List<CruiseLine>> GetCruiseLines()
+    {
+        var lines = await _unitOfWork.CruiseLineRepository.Get();
+
+        var cruiseLines = new List<CruiseLine>();
+        foreach (var line in lines)
+        {
+            var cruiseLine = new CruiseLine()
+            {
+                Name = line.Name ?? String.Empty,
+                SortOrder = line.SortOrder,
+                IsFeatured = line.IsFeatured,
+                CruiseLineId = line.CruiseLineId
+            };
+            cruiseLines.Add(cruiseLine);
+        }
+
+        return cruiseLines;
+    }
+    
+    public async Task<List<Shared.Models.Destination>> GetDestinations()
+    {
+        var regions = await _unitOfWork.RegionRepository.Get();
+
+        var destinations = new List<Destination>();
+        foreach (var region in regions)
+        {
+            var destination = new Destination()
+            {
+                Name = region.Name ?? String.Empty,
+                SortOrder = region.SortOrder ?? 0,
+                RegionId = region.RegionId,
+                ParentRegionId = region.ParentRegionId ?? 0,
+                ListingName = region.ListingName ?? String.Empty
+            };
+            destinations.Add(destination);
+        }
+
+        return destinations;
+    }
 }

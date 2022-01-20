@@ -1,5 +1,13 @@
-<h3>TopDestinations</h3>
-
-@code {
-    
+@if (Destinations != null && Destinations.Any())
+{
+    <h4 class="title2">Top Destinations</h4>
+    <ul>
+        @foreach (var destination in Destinations)
+        {
+            <li>
+                <a href="/results/destination/@destination.Name">@destination.Name</a>
+            </li>
+        }
+    </ul>
+    <a href="#" class="more"></a>
 }
