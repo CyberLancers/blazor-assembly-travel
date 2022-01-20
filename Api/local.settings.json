@@ -10,6 +10,6 @@
     "CORSCredentials": false
   },
   "ConnectionStrings": {
-    "CruisePriceWatchContext": "Server=localhost,1433;Initial Catalog=cruisepricewatchdev;Persist Security Info=False;User ID=sa;Password=password;MultipleActiveResultSets=False;Connection Timeout=30;"
+    "CruisePriceWatchContext": "Server=localhost,1433;Initial Catalog=cruisepricewatchdev;Persist Security Info=False;User ID=sa;Password=coron@19;MultipleActiveResultSets=False;Connection Timeout=30;"
   }
 }
